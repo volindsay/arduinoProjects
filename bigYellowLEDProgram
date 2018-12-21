@@ -1,0 +1,18 @@
+int yellowBigLED = 9;
+int waitTimeOn = 500;
+int waitTimeOff = 100;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(yellowBigLED,OUTPUT);
+  pinMode(13,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(13,LOW);
+  digitalWrite(yellowBigLED,HIGH);
+  delay(waitTimeOn);
+  digitalWrite(yellowBigLED,LOW);
+  delay(waitTimeOff);
+}
