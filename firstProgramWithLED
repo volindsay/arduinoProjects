@@ -1,0 +1,23 @@
+// This is a global variable
+// int, float or string
+
+
+int LEDPin = 13;
+int waitTimeOn = 500;
+int waitTimeOff = 100;
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(LEDPin,OUTPUT); // pinMode states you are modifying a pin on the board. 
+                      // 13 is which pin,
+                      // OUTPUT states what you are doing, outputting information
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(LEDPin,HIGH); // what you are writing. Which item you are writing to 
+                         // and HIGH/LOW to state the status you want for the LED 
+                         // in this case. PIN 13 on this arduino is the onboard LED
+ delay(waitTimeOn);
+ digitalWrite(LEDPin,LOW);
+ delay(waitTimeOff);
+}
