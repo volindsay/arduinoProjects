@@ -1,0 +1,62 @@
+
+// the different hues are the pins. They are in the ~ pins on the arduino. We want to do serial writing this time. 
+int redHue = 6;
+int greenHue = 10;
+int blueHue = 11;
+int waitTimeOn = 500;
+int waitTimeOff = 300;
+int brightness = 100;
+int colorOff = 0;
+void setup() {
+  
+  Serial.begin(9600); //Turn on Serial Port
+ //Pin setup  
+  pinMode(redHue,OUTPUT);
+  pinMode(greenHue,OUTPUT);
+  pinMode(blueHue,OUTPUT);
+  pinMode(13,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+//  digitalWrite(13,LOW);
+//  digitalWrite(redSquareLED,LOW);
+//  digitalWrite(yellowBigLED,HIGH);
+//  delay(waitTimeOn);
+//  digitalWrite(redSquareLED,HIGH);
+//  digitalWrite(yellowBigLED,LOW);
+//  delay(waitTimeOff);
+//We are doing analog writes this time.
+  analogWrite(redHue,colorOff);
+  analogWrite(greenHue,colorOff);
+  analogWrite(blueHue,brightness);
+  delay(500);
+  analogWrite(redHue,brightness);
+  analogWrite(greenHue,colorOff);
+  analogWrite(blueHue,colorOff);
+  delay(500);
+  analogWrite(redHue,colorOff);
+  analogWrite(greenHue,brightness);
+  analogWrite(blueHue,colorOff);
+  delay(1000);
+
+  analogWrite(redHue,colorOff);
+  analogWrite(greenHue,colorOff);
+  analogWrite(blueHue,colorOff);
+  delay(1000);
+  
+  analogWrite(redHue,50);
+  analogWrite(greenHue,50);
+  analogWrite(blueHue,50);
+  delay(1000);
+
+  analogWrite(redHue,colorOff);
+  analogWrite(greenHue,colorOff);
+  analogWrite(blueHue,colorOff);
+  delay(1000);
+
+  analogWrite(redHue,50);
+  analogWrite(greenHue,0);
+  analogWrite(blueHue,50);
+  delay(1000);
+}
